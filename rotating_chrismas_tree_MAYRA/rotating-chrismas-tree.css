@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #0a0e13;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+.greeting {
+  position: fixed;
+  bottom: 14vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 3vmin;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff1c1c;
+  text-shadow: 
+    -1px -1px 0 #ffd54a,
+     1px -1px 0 #ffd54a,
+    -1px  1px 0 #ffd54a,
+     1px  1px 0 #ffd54a,
+     0 0 10px rgba(0, 255, 120, 0.7),
+     0 0 18px rgba(255, 213, 74, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.3vmin solid #ffd54a;
+  animation: typing 3s steps(22, end) 0.5s forwards, blink-caret 0.7s step-end infinite;
+}
+.tree {
+  position: relative;
+  height: 50vmin;
+  width: 25vmin;
+  transform-style: preserve-3d;
+  -webkit-animation: spin 2s infinite linear;
+          animation: spin 2s infinite linear;
+}
+
+.tree__light {
+  transform-style: preserve-3d;
+  position: absolute;
+  height: 1vmin;
+  width: 1vmin;
+  border-radius: 50%;
+  -webkit-animation: flash calc(var(--speed) * 1s)
+                     calc(var(--delay) * 1s)
+                     infinite steps(4),
+                     appear 0.5s calc(var(--appear) * 0.05s)
+                     both;
+          animation: flash calc(var(--speed) * 1s) calc(var(--delay) * 1s)
+                     infinite steps(4), appear 0.5s calc(var(--appear) * 0.05s) both;
+  left: 50%;
+  transform: translate(-50%, 50%) rotateY(calc(var(--rotate, 0) * 1deg))
+                     translate3d(0, 0, calc(var(--radius, 0) * 1vmin));
+  bottom: calc(var(--y, 0) * 1%);
+}
+
+.tree__star {
+  stroke-width: 5vmin;
+  stroke: #f5e0a3;
+  filter: drop-shadow(0 0 2vmin #fcf1cf);
+  height: 5vmin;
+  width: 5vmin;
+  overflow: visible !important;
+  bottom: 100%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: absolute;
+  stroke-dasharray: 1000 1000;
+  fill: none;
+  -webkit-animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+          animation: stroke 1s calc((var(--delay) * 0.95) * 0.05s) both;
+}
+@-webkit-keyframes stroke {
+  from {
+    stroke-dashoffset: -1000;
+  }
+}
+@keyframes stroke {
+  from {
+    stroke-dashoffset: -1000;
+  }
+}
+@-webkit-keyframes spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotateY(360deg);
+  }
+}
+@-webkit-keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes flash {
+  0%, 100% {
+    background: #f00;
+  }
+  20% {
+    background: #fff;
+  }
+  40% {
+    background: #f00;
+  }
+  60% {
+    background: #fff;
+  }
+  80% {
+    background: #f00;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 23.5ch;
+  }
+}
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(245, 224, 163, 0.9);
+  }
+}
+@keyframes flash {
+  0%, 100% {
+    background: #f00;
+  }
+  20% {
+    background: #fff;
+  }
+  40% {
+    background: #f00;
+  }
+  60% {
+    background: #fff;
+  }
+  80% {
+    background: #f00;
+  }
+}

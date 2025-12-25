@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'mountains_of_christmasregular';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff2') format('woff2'),
+         url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/35984/mountainsofchristmas-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+body {
+  background-color:#151522;
+  overflow: hidden;
+    display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+svg{
+  width:90%;
+  height:90%;
+  visibility:hidden;
+ 
+}
+
+.sparkle{
+  /* mix-blend-mode:luminosity */
+}
+#endMessage{
+  font-family: mountains_of_christmasregular;
+  font-size: 2rem;
+  text-anchor: middle;
+  text-align: center;
+  fill: #FFFFFF;
+  color: #FFFFFF;
+  opacity:0;
+  letter-spacing: 1px;
+}
+
+a {
+  color: white;
+  text-decoration: underline dotted #FFFFFF;
+}
+
+.greeting {
+  position: fixed;
+  bottom: 8vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'mountains_of_christmasregular', cursive;
+  font-size: 3vmin;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ff1c1c;
+  text-shadow: 
+    -1px -1px 0 #ffd54a,
+     1px -1px 0 #ffd54a,
+    -1px  1px 0 #ffd54a,
+     1px  1px 0 #ffd54a,
+     0 0 10px rgba(0, 255, 120, 0.7),
+     0 0 18px rgba(255, 213, 74, 0.9);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0.3vmin solid #ffd54a;
+  animation: typing 3s steps(20, end) 0.5s forwards, blink-caret 0.7s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 35.5ch;
+  }
+}
+
+@keyframes blink-caret {
+  0%, 100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: rgba(245, 224, 163, 0.9);
+  }
+}
+a:visited {
+  color: red;
+  
+}
